@@ -1,6 +1,29 @@
 $(document).ready(function(){
   window.dancers = [];
 
+  $(".shroomOut").on('click', function(){
+    $('body').addClass('shroomOut');
+    var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
+    console.log(dancerMakerFunctionName);
+    var dancerMakerFunction = window[dancerMakerFunctionName];
+    for(var x = 0; x < 15; x++){
+      var height = ($("body").height() - 200) * Math.random();
+      var width = $("body").width() * Math.random();
+      var time = Math.random() * 1000;
+      var dancer = new dancerMakerFunction(height, width, time);
+      window.dancers.push(dancer);
+      $('body').append(dancer.$node);
+    }
+
+  })
+
+  $('.lineUp').on('click', function(){
+    $('.dancer').css({
+        'position': 'absolute',
+        'bottom': '10%'
+    })
+  })
+
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -21,11 +44,12 @@ $(document).ready(function(){
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-    var height = $("body").height() * Math.random();
+    var height = ($("body").height() - 200) * Math.random();
     var width = $("body").width() * Math.random();
     var time = Math.random() * 1000;
     console.log("height: ", height, "width: ", width, "time: ", time);
     var dancer = new dancerMakerFunction(height, width, time);
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
 });

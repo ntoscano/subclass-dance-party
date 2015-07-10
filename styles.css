@@ -9,6 +9,10 @@ body{
   font-size: 18px;
 }
 
+.shroomOut{
+  background-image: url('gifs/backgroundShroom.gif');
+}
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -27,20 +31,18 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 
-.dancer {
-  border: 10px solid red;
-  border-radius: 10px;
-  position: absolute;
-}
-
-.big {
-  border-radius: 100px;
-  border: 100px solid green;
-}
-
 .mario {
-  height: 90px;
-  width: 90px;
+  height: 120px;
+  width: 120px;
+  background-image: url("gifs/mario.gif");
+  background-size: 100% 100%;
+  position: absolute;
+
+}
+
+.marioJackson {
+  height: 120px;
+  width: 120px;
   background-image: url("gifs/marioJackson.gif");
   background-size: 100% 100%;
   position: absolute;
@@ -48,8 +50,19 @@ body, a:link, a:visited, a:active{
 }
 
 .luigi {
+  height: 120px;
+  width: 120px;
+  background-image: url("gifs/luigiWorm.gif");
+  background-size: 100% 100%;
+  position: absolute;
+
+}
+
+.luigiBanana {
   height: 90px;
   width: 90px;
+  background-image: url("gifs/luigiBanana.gif");
+  background-size: 100% 100%;
   position: absolute;
 
 }
